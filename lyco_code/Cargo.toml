@@ -1,6 +1,6 @@
 [package]
 name = "lyco_code"
-version = "0.1.2"
+version = "0.1.4"
 edition = "2021"
 description = "claw CLI agent — mirror build of ultraworkers/claw-code, optimized for cargo-binstall"
 license = "MIT"
@@ -11,8 +11,12 @@ categories = ["command-line-utilities"]
 
 # cargo-binstall 配置：告诉 binstall 去哪里找预编译二进制
 [package.metadata.binstall]
-pkg-url = "{ repo }/releases/download/{ version }/claw-{ target }{ binary-ext }"
+pkg-url = "{ repo }/releases/download/v{ version }/claw-{ target }{ binary-ext }"
 bin-dir = "claw{ binary-ext }"
 pkg-fmt = "bin"
+
+[[bin]]
+name = "claw"
+path = "src/main.rs"
 
 [dependencies]
